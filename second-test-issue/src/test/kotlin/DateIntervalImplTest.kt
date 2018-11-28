@@ -14,27 +14,27 @@ class DateIntervalImplTest {
 
     private val firstInterval = DateIntervalImpl(
             Date(2015, 10, 7, 23, 0, 0),
-            Date(2018, 10, 7, 23, 0, 0));
+            Date(2018, 10, 7, 23, 0, 0))
 
     private val secondInterval = DateIntervalImpl(
             Date(2016, 10, 7, 23, 0, 0),
-            Date(2019, 10, 7, 23, 0, 0));
+            Date(2019, 10, 7, 23, 0, 0))
 
     private val thirdInterval = DateIntervalImpl(
             Date(2018, 10, 7, 23, 0, 0),
-            Date(2036, 10, 7, 23, 0, 0));
+            Date(2036, 10, 7, 23, 0, 0))
 
     private val fourthInterval = DateIntervalImpl(
             Date(2015, 10, 7, 23, 0, 0),
-            Date(2018, 10, 7, 23, 0, 0));
+            Date(2018, 10, 7, 23, 0, 0))
 
     private val fifthInterval = DateIntervalImpl(
             Date(2018, 10, 7, 23, 0, 0),
-            Date(2018, 10, 9, 23, 0, 0));
+            Date(2018, 10, 9, 23, 0, 0))
 
     private val sixInterval = DateIntervalImpl(
             Date(2099, 10, 7, 23, 0, 0),
-            Date(2099, 10, 9, 23, 0, 0));
+            Date(2099, 10, 9, 23, 0, 0))
 
     @TestFactory
     fun testIsIntersectedMethod() = listOf(
