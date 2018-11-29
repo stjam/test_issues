@@ -1,6 +1,5 @@
-public class NotBlankValidator implements Validation<String> {
-
-    public boolean validate(String object) {
+public class NotBlankValidator implements Validator<String> {
+    public boolean isValid(String object) {
         return object != null && object.trim().length() > 0;
     }
 }

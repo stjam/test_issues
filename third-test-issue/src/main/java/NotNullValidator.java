@@ -1,6 +1,5 @@
-public class NotNullValidator implements Validation<String> {
-
-    public boolean validate(String object) {
+public class NotNullValidator implements Validator<String> {
+    public boolean isValid(String object) {
         return object != null;
     }
 }

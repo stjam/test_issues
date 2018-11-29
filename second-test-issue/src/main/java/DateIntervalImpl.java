@@ -1,12 +1,16 @@
 import java.util.Date;
+import java.util.Optional;
 
 public final class DateIntervalImpl implements DateInterval {
     private final Date start;
     private final Date end;
 
-    public DateIntervalImpl(final Date start, final Date end) {
-        this.start = start;
-        this.end = end;
+    public DateIntervalImpl(final Date start, final Date end) throws IllegalArgumentException {
+        this.start = Optional.ofNullable(start).orElseThrow(() -> new IllegalArgumentException("start date was null"));
+        this.end = Optional.ofNullable(end).orElseThrow(() -> new IllegalArgumentException("end date was null"));
+        if (start.after(end)) {
+            throw new IllegalArgumentException(String.format("start date %s goes after end date %s", start, end));
+        }
     }
 
     @Override
