@@ -38,6 +38,10 @@ class DateIntervalImplTest {
             Date(2099, 10, 7, 23, 0, 0),
             Date(2099, 10, 9, 23, 0, 0))
 
+    private val seventhInterval = DateIntervalImpl(
+            Date(2018, 10, 7, 23, 0, 0),
+            Date(2099, 10, 7, 23, 0, 0))
+
     private val startDate = Date(2099, 10, 7, 23, 0, 0)
     private val endDate = Date(2100, 10, 7, 23, 0, 0)
 
@@ -57,6 +61,9 @@ class DateIntervalImplTest {
             },
             dynamicTest("when intervals is notintersected isIntersected() should return false") {
                 assertThat(fourthInterval.isIntersected(sixInterval)).isFalse()
+            },
+            dynamicTest("when start interval is equal the start of another isIntersected() should return false") {
+                assertThat(sixInterval.isIntersected(seventhInterval)).isTrue()
             }
     )
 
